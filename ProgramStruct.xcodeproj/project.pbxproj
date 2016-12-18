@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2058D7CF0D14A945E9E575E2 /* libPods-ProgramStruct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90C8F7C1B18947755D6FC56 /* libPods-ProgramStruct.a */; };
+		29282A37DA021CF68C00F2BA /* Pods_ProgramStruct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54DE970CA674EB425B717F0 /* Pods_ProgramStruct.framework */; };
 		6E5E6E351E00FBBE00AC8573 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E341E00FBBE00AC8573 /* main.m */; };
 		6E5E6E381E00FBBE00AC8573 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E371E00FBBE00AC8573 /* AppDelegate.m */; };
 		6E5E6E3B1E00FBBE00AC8573 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E3A1E00FBBE00AC8573 /* ViewController.m */; };
@@ -22,6 +22,10 @@
 		6E5E6E881E014B0200AC8573 /* JsonDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E871E014B0200AC8573 /* JsonDataCache.m */; };
 		6E5E6E8C1E01552900AC8573 /* JsonDataCacheConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E8B1E01552900AC8573 /* JsonDataCacheConfig.m */; };
 		6E5E6E901E022FCE00AC8573 /* GetSignSecretApiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E8F1E022FCE00AC8573 /* GetSignSecretApiModel.m */; };
+		6E93BD2E1E067BC3004F38BA /* LineInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93BD2D1E067BC3004F38BA /* LineInfoView.m */; };
+		6ECFE0721E0629BF0059106B /* BaseViewModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECFE0711E0629BF0059106B /* BaseViewModelClass.m */; };
+		6ECFE0781E062A6E0059106B /* LineInfoViewHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECFE0771E062A6E0059106B /* LineInfoViewHeaderViewModel.m */; };
+		6ECFE07B1E062D430059106B /* LineInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECFE07A1E062D430059106B /* LineInfoHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +56,7 @@
 		6E5E6E3D1E00FBBE00AC8573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E5E6E3F1E00FBBE00AC8573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resource/Assets.xcassets; sourceTree = "<group>"; };
 		6E5E6E421E00FBBE00AC8573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6E5E6E441E00FBBE00AC8573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resource/Info.plist; sourceTree = "<group>"; };
+		6E5E6E441E00FBBE00AC8573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E5E6E491E00FBBE00AC8573 /* ProgramStructTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgramStructTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E5E6E4D1E00FBBE00AC8573 /* ProgramStructTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgramStructTests.m; sourceTree = "<group>"; };
 		6E5E6E4F1E00FBBE00AC8573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,8 +78,19 @@
 		6E5E6E8B1E01552900AC8573 /* JsonDataCacheConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JsonDataCacheConfig.m; path = Model/Base/JsonDataCacheConfig.m; sourceTree = "<group>"; };
 		6E5E6E8E1E022FCE00AC8573 /* GetSignSecretApiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetSignSecretApiModel.h; path = Model/Api/GetSignSecretApiModel.h; sourceTree = "<group>"; };
 		6E5E6E8F1E022FCE00AC8573 /* GetSignSecretApiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetSignSecretApiModel.m; path = Model/Api/GetSignSecretApiModel.m; sourceTree = "<group>"; };
+		6E5E6E911E02726A00AC8573 /* https.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = https.cer; path = Resource/https.cer; sourceTree = "<group>"; };
+		6E5E6E921E02726A00AC8573 /* udianbus.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = udianbus.cer; path = Resource/udianbus.cer; sourceTree = "<group>"; };
+		6E5E6E941E039D0F00AC8573 /* OfficalLetters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OfficalLetters.h; path = Const/OfficalLetters.h; sourceTree = "<group>"; };
+		6E93BD2C1E067BC3004F38BA /* LineInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineInfoView.h; path = View/LineInfoView.h; sourceTree = "<group>"; };
+		6E93BD2D1E067BC3004F38BA /* LineInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineInfoView.m; path = View/LineInfoView.m; sourceTree = "<group>"; };
+		6ECFE0701E0629BF0059106B /* BaseViewModelClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewModelClass.h; path = ViewModel/BaseViewModelClass.h; sourceTree = "<group>"; };
+		6ECFE0711E0629BF0059106B /* BaseViewModelClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewModelClass.m; path = ViewModel/BaseViewModelClass.m; sourceTree = "<group>"; };
+		6ECFE0761E062A6E0059106B /* LineInfoViewHeaderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineInfoViewHeaderViewModel.h; path = ViewModel/LineInfoViewHeaderViewModel.h; sourceTree = "<group>"; };
+		6ECFE0771E062A6E0059106B /* LineInfoViewHeaderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineInfoViewHeaderViewModel.m; path = ViewModel/LineInfoViewHeaderViewModel.m; sourceTree = "<group>"; };
+		6ECFE0791E062D430059106B /* LineInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineInfoHeaderView.h; path = View/LineInfoHeaderView.h; sourceTree = "<group>"; };
+		6ECFE07A1E062D430059106B /* LineInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineInfoHeaderView.m; path = View/LineInfoHeaderView.m; sourceTree = "<group>"; };
 		97D1CBE5574B10FB90DAF9EF /* Pods-ProgramStruct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProgramStruct.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProgramStruct/Pods-ProgramStruct.release.xcconfig"; sourceTree = "<group>"; };
-		C90C8F7C1B18947755D6FC56 /* libPods-ProgramStruct.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProgramStruct.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F54DE970CA674EB425B717F0 /* Pods_ProgramStruct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProgramStruct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2058D7CF0D14A945E9E575E2 /* libPods-ProgramStruct.a in Frameworks */,
+				29282A37DA021CF68C00F2BA /* Pods_ProgramStruct.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +144,7 @@
 		6E5E6E321E00FBBE00AC8573 /* ProgramStruct */ = {
 			isa = PBXGroup;
 			children = (
+				6E5E6E721E011A0F00AC8573 /* ViewModel */,
 				6E5E6E711E0119FA00AC8573 /* View */,
 				6E5E6E701E0119DC00AC8573 /* Controller */,
 				6E5E6E6F1E0119A200AC8573 /* Helper */,
@@ -207,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				6E5E6E741E012F8100AC8573 /* AppConstants.h */,
+				6E5E6E941E039D0F00AC8573 /* OfficalLetters.h */,
 			);
 			name = Const;
 			sourceTree = "<group>";
@@ -242,6 +259,8 @@
 		6E5E6E6E1E0117BD00AC8573 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6E5E6E911E02726A00AC8573 /* https.cer */,
+				6E5E6E921E02726A00AC8573 /* udianbus.cer */,
 				6E5E6E441E00FBBE00AC8573 /* Info.plist */,
 				6E5E6E3F1E00FBBE00AC8573 /* Assets.xcassets */,
 			);
@@ -267,7 +286,10 @@
 		6E5E6E711E0119FA00AC8573 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6E5E6E721E011A0F00AC8573 /* ViewModel */,
+				6ECFE0791E062D430059106B /* LineInfoHeaderView.h */,
+				6ECFE07A1E062D430059106B /* LineInfoHeaderView.m */,
+				6E93BD2C1E067BC3004F38BA /* LineInfoView.h */,
+				6E93BD2D1E067BC3004F38BA /* LineInfoView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -275,6 +297,10 @@
 		6E5E6E721E011A0F00AC8573 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				6ECFE0701E0629BF0059106B /* BaseViewModelClass.h */,
+				6ECFE0711E0629BF0059106B /* BaseViewModelClass.m */,
+				6ECFE0761E062A6E0059106B /* LineInfoViewHeaderViewModel.h */,
+				6ECFE0771E062A6E0059106B /* LineInfoViewHeaderViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -315,7 +341,7 @@
 		FF36BD12D0F064FB8B6F15F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C90C8F7C1B18947755D6FC56 /* libPods-ProgramStruct.a */,
+				F54DE970CA674EB425B717F0 /* Pods_ProgramStruct.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -391,6 +417,7 @@
 					6E5E6E2F1E00FBBE00AC8573 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = WHBN39U39E;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					6E5E6E481E00FBBE00AC8573 = {
@@ -497,7 +524,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -510,11 +537,15 @@
 				6E5E6E3B1E00FBBE00AC8573 /* ViewController.m in Sources */,
 				6E5E6E881E014B0200AC8573 /* JsonDataCache.m in Sources */,
 				6E5E6E381E00FBBE00AC8573 /* AppDelegate.m in Sources */,
+				6ECFE07B1E062D430059106B /* LineInfoHeaderView.m in Sources */,
+				6ECFE0781E062A6E0059106B /* LineInfoViewHeaderViewModel.m in Sources */,
 				6E5E6E781E01328C00AC8573 /* NSObject+Network.m in Sources */,
+				6E93BD2E1E067BC3004F38BA /* LineInfoView.m in Sources */,
 				6E5E6E7B1E013C6A00AC8573 /* BaseModelClass.m in Sources */,
 				6E5E6E7F1E013D4500AC8573 /* BaseApiModelClass.m in Sources */,
 				6E5E6E351E00FBBE00AC8573 /* main.m in Sources */,
 				6E5E6E8C1E01552900AC8573 /* JsonDataCacheConfig.m in Sources */,
+				6ECFE0721E0629BF0059106B /* BaseViewModelClass.m in Sources */,
 				6E5E6E901E022FCE00AC8573 /* GetSignSecretApiModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,6 +701,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pxb.ProgramStruct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -685,6 +717,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pxb.ProgramStruct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -8,16 +8,21 @@
 
 #import "BaseApiModelClass.h"
 
+// Model:
+@interface SignSecret : NSObject
+@property NSString *secret;
+@end
+
 
 @interface GetSignSecretApiModel : BaseApiModelClass
 
-@property (nonatomic,assign,readonly) NSInteger status;
-@property (nonatomic,strong,readonly) NSDate* time;
-@property (nonatomic,strong,readonly) NSString* msg;
-@property (nonatomic,strong,readonly) NSString* seq;
-@property (nonatomic,strong,readonly) NSString* secret;
+@property (nonatomic,assign) NSInteger status;
+@property (nonatomic,strong) NSDate* time;
+@property (nonatomic,strong) NSString* msg;
+@property (nonatomic,strong) NSString* seq;
+@property (nonatomic,strong) SignSecret* data;
 
 +(void)GetSignSecretWithSeq:(NSString*)seq
-              successHandle:(void(^)(id data,NSError* error))netSuccessHandle
+              netsuccessHandle:(void(^)(id data,NSError* error))netSuccessHandle
               netFailHandle:(void(^)(NSError* error))netFailHandle;
 @end

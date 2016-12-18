@@ -13,9 +13,17 @@
 #define PREFIX @"auth"
 #define WEBURL [NSString stringWithFormat:@"%@/%@/%@",API_SERVER_BASE_URL,PREFIX,API]
 
+@implementation SignSecret
+@end
 @implementation GetSignSecretApiModel
+
+//+ (NSDictionary *)modelCustomPropertyMapper {
+//    return @{
+//             @"secret" : @"data.secret"};
+//}
+
 +(void)GetSignSecretWithSeq:(NSString*)seq
-              successHandle:(void(^)(id data,NSError* error))netSuccessHandle
+              netsuccessHandle:(void(^)(id data,NSError* error))netSuccessHandle
               netFailHandle:(void(^)(NSError* error))netFailHandle
 {
     NSMutableDictionary* params =[[NSMutableDictionary alloc] init];
@@ -23,8 +31,11 @@
     
     [self getJsonWithUrl:WEBURL method:HTTPMETHOD_GET parameters:params loadFromCache:NO saveToCache:NO progressHandle:nil completionHandle:^(id data, NSError* error){
         if (!error) {//成功获取数据
+            
             //解析Json数据
             GetSignSecretApiModel *signSecretApiModel = [GetSignSecretApiModel yy_modelWithJSON:data];
+            signSecretApiModel.rawData = data;
+            signSecretApiModel.requestDate = [NSDate date];
             NSError* apiResponseError = nil;
             NSDictionary* userinfo = nil;
             switch (signSecretApiModel.status) {

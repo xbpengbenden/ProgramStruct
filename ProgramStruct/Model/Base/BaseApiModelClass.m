@@ -51,7 +51,9 @@
         case HTTPMETHOD_GET:
         {
             [BaseApiModelClass GET:url parameters:params progressHandle:^(NSProgress * progress) {
-                progressingHandle(progress);
+                if (progressingHandle!=nil) {
+                    progressingHandle(progress);
+                }
             } completionHandle:^(id data, NSError *error) {
                 if (!error) {
                     if (saveRequestFlag==YES) {

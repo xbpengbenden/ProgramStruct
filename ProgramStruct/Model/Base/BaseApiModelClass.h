@@ -32,10 +32,10 @@ typedef NS_ENUM(NSInteger,ApiResponseStatus) {
 };
 
 @interface BaseApiModelClass : BaseModelClass
-{
-    NSData* _rawData;
-    NSDate* _requestDate;
-}
+
+@property (nonatomic,strong) NSDate* requestDate;
+@property (nonatomic,copy) NSData* rawData;
+
 
 /**
  *  数据请求模型类基础方法,新建的模型类中通过对此方法的封装，已达到进行网络请求或对数据缓存的目的
