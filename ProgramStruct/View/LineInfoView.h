@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class LineInfoViewHeaderViewModel;
+@class LineInfoViewModel;
 @interface LineInfoView : UIView
 
-@property (nonatomic,strong) LineInfoViewHeaderViewModel* headerViewModel;
+@property (nonatomic,strong) LineInfoViewModel* viewModel;
+@property (nonatomic,strong) RACSignal* dayTicketSignal;
 
+-(instancetype)initWithViewModel:(LineInfoViewModel*)model;
 @end

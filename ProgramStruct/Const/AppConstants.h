@@ -22,7 +22,12 @@
 //车型
 #define QUALITY @"quality" //一人一座
 #define EXPRESS @"express" //不限座位
+//站点类型
+#define STATION_TYPE_GETOFF @"off"
+#define STATION_TYPE_GETON @"on"
 
+//全局变量
+#define myAppDelegate (AppDelegate *)[[UIApplication sharedApplication] delegate]
 /*颜色*/
 #define RGBCOLOR(r,g,b)     [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define RGBACOLOR(r,g,b,a)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
@@ -51,6 +56,10 @@
 #define shuttle_color_rgb RGBCOLOR(244,212,37) //接驳颜色
 #define events_color_rgb RGBCOLOR(255,93,60) //活动颜色
 
+
+
+#define ScreenW [UIScreen mainScreen].bounds.size.width
+#define ScreenH  [UIScreen mainScreen].bounds.size.height
 
 //以iphone 6  的屏幕宽度为参考，计算出任意屏幕的10像素
 #define widhtFor10 10.0 * [UIScreen mainScreen].bounds.size.width / 375

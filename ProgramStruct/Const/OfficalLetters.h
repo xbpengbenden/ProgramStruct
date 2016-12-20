@@ -25,5 +25,9 @@
 #define UDTEXT014 @"未知"
 #define UDTEXT015 @"请在该时间段乘坐"
 #define UDTEXT016 @"服务时间"
+#define UDTEXT017 @"车票"
+#define UDTEXT018 @"收起线路"
+#define UDTEXT019 @"查看线路"
+#define UDTEXT020 @"预计"
 
 #endif /* OfficalLetters_h */

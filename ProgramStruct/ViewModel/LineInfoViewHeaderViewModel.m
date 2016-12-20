@@ -22,7 +22,7 @@
     model.fullTripTimecost = @"50";
     model.mileage = @"17.0";
     model.tripStartTime = @"2016-01-01 07:25:00";
-    model.serviceStartTime = @"";
+    model.serviceStartTime = @"2016-01-01 07:30:00";
     model.serviceEndTime = nil;
     return model;
 }

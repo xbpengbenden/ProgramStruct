@@ -49,10 +49,11 @@ typedef enum : NSInteger {
     // Drawing code
 }
 */
--(instancetype)init
+-(instancetype)initWithViewModel:(LineInfoViewHeaderViewModel*)model;
 {
     if (self = [super init]) {
         [self configSubViews];
+        [self bindViewModel];
     }
     return self;
 }
@@ -228,11 +229,13 @@ typedef enum : NSInteger {
 -(void)bindViewModel
 {
     if (self.viewModel==nil) {
-        return;
+        self.viewModel = [[LineInfoViewHeaderViewModel alloc]init];
     }
     //绑定lineType动作
-    RACSignal* lineTypeSignal = RACObserve(self.viewModel, lineType);
+    @weakify(self);
+    RACSignal* lineTypeSignal = RACObserve(self, viewModel.lineType);
     [lineTypeSignal subscribeNext:^(NSString* lineType) {
+        @strongify(self);
         LineTypeEnum type = [self getLineTypeByString:lineType];
         switch (type) {
             case LineTypeCommute:
@@ -255,9 +258,9 @@ typedef enum : NSInteger {
         }
     }];
     //绑定线路名文本
-    RAC(self.lineNameLabel,text) = RACObserve(self.viewModel, lineName);
+    RAC(self.lineNameLabel,text) = RACObserve(self, viewModel.lineName);
     //绑定起点文本
-    RAC(self.startStationLabel,text) = [RACObserve(self.viewModel, startStationName) map:^id(NSString* startStationName) {
+    RAC(self.startStationLabel,text) = [RACObserve(self, viewModel.startStationName) map:^id(NSString* startStationName) {
                                             if (startStationName==nil || [startStationName isEqualToString:@""]) {
                                                 return [NSString stringWithFormat:@"(%@",UDTEXT009];
                                             }else{
@@ -265,15 +268,15 @@ typedef enum : NSInteger {
                                             }
                                         }];
     //绑定终点文本
-    RAC(self.endStationLabel,text) = [RACObserve(self.viewModel, endStationName) map:^id(NSString* endStationName) {
+    RAC(self.endStationLabel,text) = [RACObserve(self, viewModel.endStationName) map:^id(NSString* endStationName) {
                                             if (endStationName==nil || [endStationName isEqualToString:@""]) {
-                                                return [NSString stringWithFormat:@"(%@",UDTEXT010];
+                                                return [NSString stringWithFormat:@"%@)",UDTEXT010];
                                             }else{
                                                 return [NSString stringWithFormat:@"%@)",endStationName];
                                             }
                                         }];
     //绑定发车时间文本
-    RAC(self.tripStartTimeLabel,text) = [RACObserve(self.viewModel, tripStartTime) map:^id(NSString* tripStartTime) {
+    RAC(self.tripStartTimeLabel,text) = [RACObserve(self, viewModel.tripStartTime) map:^id(NSString* tripStartTime) {
                                             if (tripStartTime==nil || tripStartTime.length<16) {
                                                 return UDTEXT011;
                                             }else{
@@ -281,7 +284,7 @@ typedef enum : NSInteger {
                                             }
                                         }];
     //绑定车型文本
-    RAC(self.busTypeLabel,text) = [RACObserve(self.viewModel, busType) map:^id(NSString* busType) {
+    RAC(self.busTypeLabel,text) = [RACObserve(self, viewModel.busType) map:^id(NSString* busType) {
                                         if (busType==nil || [busType isEqualToString:@""]) {
                                             return [NSString stringWithFormat:@"车型：%@",UDTEXT014];
                                         }else if ([busType isEqualToString:QUALITY])
@@ -295,7 +298,7 @@ typedef enum : NSInteger {
                                         }
                                     }];
     //绑定里程和耗时文本
-    RAC(self.mileageAndTripTimecostLabel,text) = [RACSignal combineLatest:@[RACObserve(self.viewModel, mileage),RACObserve(self.viewModel, fullTripTimecost)] reduce:^id(NSString* mileage, NSString* timecost){
+    RAC(self.mileageAndTripTimecostLabel,text) = [RACSignal combineLatest:@[RACObserve(self, viewModel.mileage),RACObserve(self, viewModel.fullTripTimecost)] reduce:^id(NSString* mileage, NSString* timecost){
                                                         if (mileage==nil || [mileage isEqualToString:@""]) {
                                                             mileage = @"";
                                                         }else{
@@ -309,9 +312,9 @@ typedef enum : NSInteger {
                                                         return [NSString stringWithFormat:@"%@%@",mileage,timecost];
                                                     }];
     //绑定价钱文本
-    RAC(self.priceLabel,text) = RACObserve(self.viewModel, price);
+    RAC(self.priceLabel,text) = RACObserve(self, viewModel.price);
     //绑定服务时间
-    RAC(self.serviceTimeLabel,text) = [RACSignal combineLatest:@[RACObserve(self.viewModel, serviceStartTime),RACObserve(self.viewModel, serviceEndTime),RACObserve(self.viewModel, lineType)]
+    RAC(self.serviceTimeLabel,text) = [RACSignal combineLatest:@[RACObserve(self, viewModel.serviceStartTime),RACObserve(self, viewModel.serviceEndTime),RACObserve(self.viewModel, lineType)]
                                                         reduce:^id(NSString* startTime, NSString* endTime, NSString* lineType){
                                                             if (startTime==nil || startTime.length<16) {
                                                                 startTime = UDTEXT011;
@@ -339,7 +342,7 @@ typedef enum : NSInteger {
                                                             return returnString;
                                                         }];
     //绑定里程和耗时文本—2
-    RAC(self.mileageAndTripTimecostLabel_2,text) = [RACSignal combineLatest:@[RACObserve(self.viewModel, mileage),RACObserve(self.viewModel, fullTripTimecost)] reduce:^id(NSString* mileage, NSString* timecost){
+    RAC(self.mileageAndTripTimecostLabel_2,text) = [RACSignal combineLatest:@[RACObserve(self, viewModel.mileage),RACObserve(self, viewModel.fullTripTimecost)] reduce:^id(NSString* mileage, NSString* timecost){
                                                             if (mileage==nil || [mileage isEqualToString:@""]) {
                                                                 mileage = @"";
                                                             }else{
@@ -354,26 +357,6 @@ typedef enum : NSInteger {
                                                         }];
 }
 
-#pragma mark -setter
--(void)setViewModel:(LineInfoViewHeaderViewModel *)viewModel
-{
-    if (_viewModel==nil) {
-        _viewModel = viewModel;
-        [self bindViewModel];
-    }else{
-        _viewModel.lineType = viewModel.lineType;
-        _viewModel.lineName = viewModel.lineName;
-        _viewModel.startStationName = viewModel.startStationName;
-        _viewModel.endStationName = viewModel.endStationName;
-        _viewModel.busType = viewModel.busType;
-        _viewModel.price = viewModel.price;
-        _viewModel.fullTripTimecost = viewModel.fullTripTimecost;
-        _viewModel.mileage = viewModel.mileage;
-        _viewModel.tripStartTime = viewModel.tripStartTime;
-        _viewModel.serviceStartTime = viewModel.serviceStartTime;
-        _viewModel.serviceEndTime = viewModel.serviceEndTime;
-    }
-}
 #pragma mark - private
 -(LineTypeEnum)getLineTypeByString:(NSString*)lineTypeString
 {

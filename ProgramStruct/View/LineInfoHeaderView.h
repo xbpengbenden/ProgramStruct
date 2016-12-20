@@ -13,4 +13,5 @@
 
 @property (nonatomic,strong) LineInfoViewHeaderViewModel* viewModel;
 
+-(instancetype)initWithViewModel:(LineInfoViewHeaderViewModel*)model;
 @end

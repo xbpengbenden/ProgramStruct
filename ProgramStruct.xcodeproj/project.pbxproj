@@ -23,6 +23,8 @@
 		6E5E6E8C1E01552900AC8573 /* JsonDataCacheConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E8B1E01552900AC8573 /* JsonDataCacheConfig.m */; };
 		6E5E6E901E022FCE00AC8573 /* GetSignSecretApiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E8F1E022FCE00AC8573 /* GetSignSecretApiModel.m */; };
 		6E93BD2E1E067BC3004F38BA /* LineInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93BD2D1E067BC3004F38BA /* LineInfoView.m */; };
+		6E93BD321E078A39004F38BA /* LineInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93BD311E078A39004F38BA /* LineInfoViewModel.m */; };
+		6E93BD361E07F129004F38BA /* StationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93BD351E07F129004F38BA /* StationListCell.m */; };
 		6ECFE0721E0629BF0059106B /* BaseViewModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECFE0711E0629BF0059106B /* BaseViewModelClass.m */; };
 		6ECFE0781E062A6E0059106B /* LineInfoViewHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECFE0771E062A6E0059106B /* LineInfoViewHeaderViewModel.m */; };
 		6ECFE07B1E062D430059106B /* LineInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECFE07A1E062D430059106B /* LineInfoHeaderView.m */; };
@@ -83,6 +85,10 @@
 		6E5E6E941E039D0F00AC8573 /* OfficalLetters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OfficalLetters.h; path = Const/OfficalLetters.h; sourceTree = "<group>"; };
 		6E93BD2C1E067BC3004F38BA /* LineInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineInfoView.h; path = View/LineInfoView.h; sourceTree = "<group>"; };
 		6E93BD2D1E067BC3004F38BA /* LineInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineInfoView.m; path = View/LineInfoView.m; sourceTree = "<group>"; };
+		6E93BD301E078A39004F38BA /* LineInfoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineInfoViewModel.h; path = ViewModel/LineInfoViewModel.h; sourceTree = "<group>"; };
+		6E93BD311E078A39004F38BA /* LineInfoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineInfoViewModel.m; path = ViewModel/LineInfoViewModel.m; sourceTree = "<group>"; };
+		6E93BD341E07F129004F38BA /* StationListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationListCell.h; path = View/StationListCell.h; sourceTree = "<group>"; };
+		6E93BD351E07F129004F38BA /* StationListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationListCell.m; path = View/StationListCell.m; sourceTree = "<group>"; };
 		6ECFE0701E0629BF0059106B /* BaseViewModelClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewModelClass.h; path = ViewModel/BaseViewModelClass.h; sourceTree = "<group>"; };
 		6ECFE0711E0629BF0059106B /* BaseViewModelClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewModelClass.m; path = ViewModel/BaseViewModelClass.m; sourceTree = "<group>"; };
 		6ECFE0761E062A6E0059106B /* LineInfoViewHeaderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineInfoViewHeaderViewModel.h; path = ViewModel/LineInfoViewHeaderViewModel.h; sourceTree = "<group>"; };
@@ -286,6 +292,7 @@
 		6E5E6E711E0119FA00AC8573 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6E93BD331E07F06F004F38BA /* cell */,
 				6ECFE0791E062D430059106B /* LineInfoHeaderView.h */,
 				6ECFE07A1E062D430059106B /* LineInfoHeaderView.m */,
 				6E93BD2C1E067BC3004F38BA /* LineInfoView.h */,
@@ -297,10 +304,11 @@
 		6E5E6E721E011A0F00AC8573 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				6ECFE0701E0629BF0059106B /* BaseViewModelClass.h */,
-				6ECFE0711E0629BF0059106B /* BaseViewModelClass.m */,
+				6E93BD2F1E078738004F38BA /* base */,
 				6ECFE0761E062A6E0059106B /* LineInfoViewHeaderViewModel.h */,
 				6ECFE0771E062A6E0059106B /* LineInfoViewHeaderViewModel.m */,
+				6E93BD301E078A39004F38BA /* LineInfoViewModel.h */,
+				6E93BD311E078A39004F38BA /* LineInfoViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -327,6 +335,24 @@
 				6E5E6E8F1E022FCE00AC8573 /* GetSignSecretApiModel.m */,
 			);
 			name = Api;
+			sourceTree = "<group>";
+		};
+		6E93BD2F1E078738004F38BA /* base */ = {
+			isa = PBXGroup;
+			children = (
+				6ECFE0701E0629BF0059106B /* BaseViewModelClass.h */,
+				6ECFE0711E0629BF0059106B /* BaseViewModelClass.m */,
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
+		6E93BD331E07F06F004F38BA /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				6E93BD341E07F129004F38BA /* StationListCell.h */,
+				6E93BD351E07F129004F38BA /* StationListCell.m */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 		6FE98816A73F6134A4250D23 /* Pods */ = {
@@ -536,6 +562,8 @@
 			files = (
 				6E5E6E3B1E00FBBE00AC8573 /* ViewController.m in Sources */,
 				6E5E6E881E014B0200AC8573 /* JsonDataCache.m in Sources */,
+				6E93BD321E078A39004F38BA /* LineInfoViewModel.m in Sources */,
+				6E93BD361E07F129004F38BA /* StationListCell.m in Sources */,
 				6E5E6E381E00FBBE00AC8573 /* AppDelegate.m in Sources */,
 				6ECFE07B1E062D430059106B /* LineInfoHeaderView.m in Sources */,
 				6ECFE0781E062A6E0059106B /* LineInfoViewHeaderViewModel.m in Sources */,
