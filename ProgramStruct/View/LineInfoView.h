@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @class LineInfoViewModel;
-@interface LineInfoView : UIView
+@interface LineInfoView : UIView<BaseViewProtocol>
 
 @property (nonatomic,strong) LineInfoViewModel* viewModel;
 @property (nonatomic,strong) RACSignal* dayTicketSignal;
 
--(instancetype)initWithViewModel:(LineInfoViewModel*)model;
 @end

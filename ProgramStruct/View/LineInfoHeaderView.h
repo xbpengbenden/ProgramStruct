@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @class LineInfoViewHeaderViewModel;
-@interface LineInfoHeaderView : UIView
+@interface LineInfoHeaderView : UIView<BaseViewProtocol>
 
 @property (nonatomic,strong) LineInfoViewHeaderViewModel* viewModel;
 
--(instancetype)initWithViewModel:(LineInfoViewHeaderViewModel*)model;
 @end

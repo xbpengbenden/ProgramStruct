@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class StationObj;
-@interface StationListCell : UITableViewCell
+@interface StationListCell : UITableViewCell<BaseCellViewProtocol>
 @property (nonatomic,strong) StationObj* viewModel;
 
-+(instancetype)cellWithTableView:(UITableView*)tableView;
 @end

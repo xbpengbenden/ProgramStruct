@@ -49,16 +49,19 @@ typedef enum : NSInteger {
     // Drawing code
 }
 */
--(instancetype)initWithViewModel:(LineInfoViewHeaderViewModel*)model;
+#pragma mark - BaseViewProtocol
+-(instancetype)initViewWithViewModel:(BaseViewModelClass*)viewModel;
 {
+    NSCParameterAssert([viewModel isKindOfClass:[LineInfoViewHeaderViewModel class]]);
     if (self = [super init]) {
+        self.viewModel = (LineInfoViewHeaderViewModel*)viewModel;
         [self configSubViews];
         [self bindViewModel];
     }
     return self;
 }
 
-
+#pragma mark - pragram flow(工作流)
 -(void)configSubViews
 {
     self.backgroundColor = [UIColor whiteColor];

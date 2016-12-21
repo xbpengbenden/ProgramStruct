@@ -8,11 +8,11 @@
 
 #import "BaseViewModelClass.h"
 
-@interface PointObj : NSObject
+@interface PointObj : BaseViewModelClass
 @property (nonatomic,assign) float longitude;
 @property (nonatomic,assign) float latitude;
 @end
-@interface StationObj : NSObject
+@interface StationObj : BaseViewModelClass
 @property (nonatomic,assign) NSInteger index;
 @property (nonatomic,strong) NSString* stationName;
 @property (nonatomic,strong) NSString* etaTime;
@@ -22,7 +22,7 @@
 @property (nonatomic,strong) NSString* stationType;
 @property (nonatomic,assign) BOOL isSelected;
 @end
-@interface BusLocation : NSObject
+@interface BusLocation : BaseViewModelClass
 @property (nonatomic,strong) NSString* plateNumber;
 @property (nonatomic,assign) float longitude;
 @property (nonatomic,assign) float latitude;

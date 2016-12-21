@@ -8,15 +8,20 @@
 
 #import "StationListCell.h"
 #import "LineInfoViewModel.h"
+
+#define CELL_INDENTIFIER @"StationListCell"
 @implementation StationListCell
 
-+(instancetype)cellWithTableView:(UITableView*)tableView
++(instancetype)cellWithTableView:(UITableView*)tableView viewModel:(id)viewModel
 {
+    NSCParameterAssert(tableView!=nil);
+    NSCParameterAssert([viewModel isKindOfClass:[StationObj class]]);
     
-    StationListCell* cell = [tableView dequeueReusableCellWithIdentifier:@"StationListCell"];
+    StationListCell* cell = [tableView dequeueReusableCellWithIdentifier:CELL_INDENTIFIER];
     if (cell == nil) {
-        cell = [[ StationListCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"StationListCell"];
+        cell = [[ StationListCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CELL_INDENTIFIER];
     }
+    cell.viewModel = viewModel;
     return cell;
 }
 

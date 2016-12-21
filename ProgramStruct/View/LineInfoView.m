@@ -38,10 +38,12 @@
     // Drawing code
 }
 */
--(instancetype)initWithViewModel:(LineInfoViewModel*)model
+#pragma mark - BaseViewProtocol 
+-(instancetype)initViewWithViewModel:(BaseViewModelClass*)viewModel
 {
+    NSCParameterAssert([viewModel isKindOfClass:[LineInfoViewModel class]]);
     if (self = [super init]) {
-        self.viewModel = model;
+        self.viewModel = (LineInfoViewModel*)viewModel;
         [self configSubViews];
         [self bindViewModel];
         [self setupOutputSignal];
@@ -49,11 +51,12 @@
     return self;
 }
 
+#pragma mark - pragram flow(工作流)
 -(void)configSubViews
 {
     self.backgroundColor = [UIColor yellowColor];
     // 线路描述信息
-    _lineInfoHeaderView = [[LineInfoHeaderView alloc] initWithViewModel:_viewModel.headerViewModel];
+    _lineInfoHeaderView = [[LineInfoHeaderView alloc] initViewWithViewModel:_viewModel.headerViewModel];
     [self addSubview:_lineInfoHeaderView];
     [_lineInfoHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(heightFor10 * 8.5);
@@ -170,10 +173,8 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = indexPath.row;
-    StationListCell* cell = [StationListCell cellWithTableView:_stationListTableView];
     StationObj* cellViewModel= self.viewModel.stationList[row];
-    cell.viewModel = cellViewModel;
-    
+    StationListCell* cell = [StationListCell cellWithTableView:_stationListTableView viewModel:cellViewModel];
     return cell;
 }
 

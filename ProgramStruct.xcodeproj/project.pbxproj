@@ -49,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		3554D23D6F594438D103EB14 /* Pods-ProgramStruct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProgramStruct.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProgramStruct/Pods-ProgramStruct.debug.xcconfig"; sourceTree = "<group>"; };
+		6E031C651E0A8A3200574001 /* BaseViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseViewProtocol.h; path = View/BaseViewProtocol.h; sourceTree = "<group>"; };
+		6E031C661E0A8EF800574001 /* BaseCellViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseCellViewProtocol.h; path = View/BaseCellViewProtocol.h; sourceTree = "<group>"; };
 		6E5E6E301E00FBBE00AC8573 /* ProgramStruct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgramStruct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E5E6E341E00FBBE00AC8573 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E5E6E361E00FBBE00AC8573 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +127,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E031C641E0A89F500574001 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				6E031C651E0A8A3200574001 /* BaseViewProtocol.h */,
+				6E031C661E0A8EF800574001 /* BaseCellViewProtocol.h */,
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
 		6E5E6E271E00FBBE00AC8573 = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +303,7 @@
 		6E5E6E711E0119FA00AC8573 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6E031C641E0A89F500574001 /* base */,
 				6E93BD331E07F06F004F38BA /* cell */,
 				6ECFE0791E062D430059106B /* LineInfoHeaderView.h */,
 				6ECFE07A1E062D430059106B /* LineInfoHeaderView.m */,
