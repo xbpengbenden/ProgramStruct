@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewControllerProtocol.h"
+
+@protocol BaseViewControllerProtocol <NSObject>
+
+@required
+//will be execute at BaseViewController viewDidLoad.
+-(void)setupMainView;
+-(void)bindModelToViewModel;
+@end
+
 @interface BaseViewControllerClass : UIViewController
 
 @end

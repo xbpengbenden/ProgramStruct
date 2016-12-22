@@ -17,6 +17,8 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "Masonry.h"
 
+#import <YYModel/YYModel.h>
+
 #import "UIView+BaseView.h"
 #import "UITableViewCell+BaseCell.h"
 #import "AppMacros.h"

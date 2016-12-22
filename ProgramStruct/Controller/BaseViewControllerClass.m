@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewControllerClass.h"
+
 @interface BaseViewControllerClass ()
 
 @end
@@ -29,8 +30,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if ([self respondsToSelector:@selector(setupMainView)]) {
+        [self performSelector:@selector(setupMainView)];
+    }
     if ([self respondsToSelector:@selector(bindModelToViewModel)]) {
-//        [self bindModelToViewModel];
         [self performSelector:@selector(bindModelToViewModel)];
     }
     

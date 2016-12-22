@@ -227,7 +227,6 @@ typedef enum : NSInteger {
 
     
 }
-
 -(void)bindViewModel
 {
     if (_viewModel==nil) {

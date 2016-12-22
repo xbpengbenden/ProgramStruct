@@ -7,7 +7,6 @@
 //
 
 #import "LineInfoViewModel.h"
-#import "LineInfoViewHeaderViewModel.h"
 @implementation PointObj
 @end
 @implementation StationObj

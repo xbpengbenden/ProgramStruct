@@ -138,4 +138,49 @@
     }
     return errorDescription;
 }
+
+
+
+@end
+#pragma mark - NormalParse
+@implementation BaseApiModelClass (NormalParse)
+
++(void)GetDataByUrl:(NSString*)webUrl
+             method:(HttpMethod)method
+         Parameters:(NSDictionary*)params
+      loadFromCache:(BOOL)loadFromCache
+        saveToCache:(BOOL)saveToCache
+   netsuccessHandle:(void(^)(id data,NSError* error))netSuccessHandle
+      netFailHandle:(void(^)(NSError* error))netFailHandle
+{
+    [self getJsonWithUrl:webUrl method:method parameters:params loadFromCache:loadFromCache saveToCache:saveToCache progressHandle:nil completionHandle:^(id data, NSError* error){
+        if (!error) {//成功获取数据
+            
+            //解析Json数据
+            BaseApiModelClass* apiModel = [self yy_modelWithJSON:data];
+            apiModel.rawData = data;
+            apiModel.requestDate = [NSDate date];
+            NSError* apiResponseError = nil;
+            NSDictionary* userinfo = nil;
+            switch (apiModel.status) {
+                case API_RESPONSE_OK:
+                case API_RESPONSE_CREATED:
+                case API_RESPONSE_ACCEPTED:
+                    break;
+                default:
+                    userinfo = [NSDictionary dictionaryWithObject:[self errorDescriptionForStatus:apiModel.status] forKey:NSLocalizedDescriptionKey];
+                    apiResponseError = [NSError errorWithDomain:CustomErrorDomain code:apiModel.status userInfo:userinfo];
+                    break;
+            }
+            if (netSuccessHandle!=nil) {//if api response good, the apiResponseError is nil
+                netSuccessHandle(apiModel,apiResponseError);
+            }
+        }else{
+            if (netFailHandle!=nil) {
+                netFailHandle(error);
+            }
+        }
+    }];
+}
+
 @end

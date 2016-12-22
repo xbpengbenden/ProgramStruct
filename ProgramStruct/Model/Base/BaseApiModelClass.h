@@ -36,6 +36,11 @@ typedef NS_ENUM(NSInteger,ApiResponseStatus) {
 @property (nonatomic,strong) NSDate* requestDate;
 @property (nonatomic,copy) NSData* rawData;
 
+@property (nonatomic,assign) NSInteger status;
+@property (nonatomic,strong) NSDate* time;
+@property (nonatomic,strong) NSString* msg;
+@property (nonatomic,strong) NSString* seq;
+
 
 /**
  *  数据请求模型类基础方法,新建的模型类中通过对此方法的封装，已达到进行网络请求或对数据缓存的目的
@@ -47,13 +52,24 @@ typedef NS_ENUM(NSInteger,ApiResponseStatus) {
  *  @param saveCacheFlag    是否将网络请求的数据存储到内存->本地，YES使用、NO不使用
  *  @param completionHandle 数据回调
  */
-+(void)getJsonWithUrl:(NSString*)url
-               method:(HttpMethod)method
-           parameters:(NSDictionary *)params
-        loadFromCache:(BOOL)loadCacheFlag
-          saveToCache:(BOOL)saveCacheFlag
-       progressHandle:(void (^)(NSProgress *))progressingHandle
-     completionHandle:(void (^)(id result, NSError * error)) completionHandle;
+//+(void)getJsonWithUrl:(NSString*)url
+//               method:(HttpMethod)method
+//           parameters:(NSDictionary *)params
+//        loadFromCache:(BOOL)loadCacheFlag
+//          saveToCache:(BOOL)saveCacheFlag
+//       progressHandle:(void (^)(NSProgress *))progressingHandle
+//     completionHandle:(void (^)(id result, NSError * error)) completionHandle;
+//
+//+(NSString*)errorDescriptionForStatus:(NSInteger)status;
+@end
 
-+(NSString*)errorDescriptionForStatus:(NSInteger)status;
+//统一处理apiModel的Parse方法
+@interface BaseApiModelClass (NormalParse)
++(void)GetDataByUrl:(NSString*)webUrl
+             method:(HttpMethod)method
+         Parameters:(NSDictionary*)params
+      loadFromCache:(BOOL)loadFromCache
+        saveToCache:(BOOL)saveToCache
+   netsuccessHandle:(void(^)(id data,NSError* error))netSuccessHandle
+      netFailHandle:(void(^)(NSError* error))netFailHandle;
 @end

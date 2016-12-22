@@ -148,7 +148,13 @@
     }];
     //绑定headerView的viewModel
     RAC(self.lineInfoHeaderView,viewModel) = RACObserve(self, viewModel.headerViewModel);
-    
+    //绑定sationList改变的动作动作
+    @weakify(self);
+    [[RACObserve(self, viewModel.stationList) bufferWithTime:0 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+        @strongify(self);
+        [self.stationListTableView reloadData];
+        [self.viewModel setWrapStationList:NO];
+    }];
 }
 -(void)configOutputSignal
 {
@@ -195,8 +201,6 @@
         self.viewModel.selectOffstation = station;
     }
 }
-
-
 #pragma mark - private
 //隐藏动画
 -(void)hiddeAnimation

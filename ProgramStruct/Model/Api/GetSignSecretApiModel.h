@@ -16,10 +16,6 @@
 
 @interface GetSignSecretApiModel : BaseApiModelClass
 
-@property (nonatomic,assign) NSInteger status;
-@property (nonatomic,strong) NSDate* time;
-@property (nonatomic,strong) NSString* msg;
-@property (nonatomic,strong) NSString* seq;
 @property (nonatomic,strong) SignSecret* data;
 
 +(void)GetSignSecretWithSeq:(NSString*)seq

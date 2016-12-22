@@ -24,6 +24,7 @@
 		6E5E6E881E014B0200AC8573 /* JsonDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E871E014B0200AC8573 /* JsonDataCache.m */; };
 		6E5E6E8C1E01552900AC8573 /* JsonDataCacheConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E8B1E01552900AC8573 /* JsonDataCacheConfig.m */; };
 		6E5E6E901E022FCE00AC8573 /* GetSignSecretApiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E8F1E022FCE00AC8573 /* GetSignSecretApiModel.m */; };
+		6E6603761E0BEAC700F025AE /* GetLineDetailApiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6603751E0BEAC700F025AE /* GetLineDetailApiModel.m */; };
 		6E93BD2E1E067BC3004F38BA /* LineInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93BD2D1E067BC3004F38BA /* LineInfoView.m */; };
 		6E93BD321E078A39004F38BA /* LineInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93BD311E078A39004F38BA /* LineInfoViewModel.m */; };
 		6E93BD361E07F129004F38BA /* StationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93BD351E07F129004F38BA /* StationListCell.m */; };
@@ -53,7 +54,6 @@
 		3554D23D6F594438D103EB14 /* Pods-ProgramStruct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProgramStruct.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProgramStruct/Pods-ProgramStruct.debug.xcconfig"; sourceTree = "<group>"; };
 		6E031C6D1E0B7A2500574001 /* BaseViewControllerClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewControllerClass.h; path = Controller/BaseViewControllerClass.h; sourceTree = "<group>"; };
 		6E031C6E1E0B7A2500574001 /* BaseViewControllerClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewControllerClass.m; path = Controller/BaseViewControllerClass.m; sourceTree = "<group>"; };
-		6E031C701E0B7AB800574001 /* BaseViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseViewControllerProtocol.h; path = Controller/BaseViewControllerProtocol.h; sourceTree = "<group>"; };
 		6E031C711E0B955A00574001 /* UIView+BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+BaseView.h"; path = "View/UIView+BaseView.h"; sourceTree = "<group>"; };
 		6E031C721E0B955A00574001 /* UIView+BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+BaseView.m"; path = "View/UIView+BaseView.m"; sourceTree = "<group>"; };
 		6E031C741E0BA88C00574001 /* UITableViewCell+BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+BaseCell.h"; path = "View/UITableViewCell+BaseCell.h"; sourceTree = "<group>"; };
@@ -91,6 +91,8 @@
 		6E5E6E911E02726A00AC8573 /* https.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = https.cer; path = Resource/https.cer; sourceTree = "<group>"; };
 		6E5E6E921E02726A00AC8573 /* udianbus.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = udianbus.cer; path = Resource/udianbus.cer; sourceTree = "<group>"; };
 		6E5E6E941E039D0F00AC8573 /* OfficalLetters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OfficalLetters.h; path = Const/OfficalLetters.h; sourceTree = "<group>"; };
+		6E6603741E0BEAC700F025AE /* GetLineDetailApiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetLineDetailApiModel.h; path = Model/Api/GetLineDetailApiModel.h; sourceTree = "<group>"; };
+		6E6603751E0BEAC700F025AE /* GetLineDetailApiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetLineDetailApiModel.m; path = Model/Api/GetLineDetailApiModel.m; sourceTree = "<group>"; };
 		6E93BD2C1E067BC3004F38BA /* LineInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineInfoView.h; path = View/LineInfoView.h; sourceTree = "<group>"; };
 		6E93BD2D1E067BC3004F38BA /* LineInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineInfoView.m; path = View/LineInfoView.m; sourceTree = "<group>"; };
 		6E93BD301E078A39004F38BA /* LineInfoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineInfoViewModel.h; path = ViewModel/LineInfoViewModel.h; sourceTree = "<group>"; };
@@ -162,7 +164,6 @@
 		6E031C691E0B776C00574001 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				6E031C701E0B7AB800574001 /* BaseViewControllerProtocol.h */,
 				6E031C6D1E0B7A2500574001 /* BaseViewControllerClass.h */,
 				6E031C6E1E0B7A2500574001 /* BaseViewControllerClass.m */,
 			);
@@ -379,6 +380,8 @@
 			children = (
 				6E5E6E8E1E022FCE00AC8573 /* GetSignSecretApiModel.h */,
 				6E5E6E8F1E022FCE00AC8573 /* GetSignSecretApiModel.m */,
+				6E6603741E0BEAC700F025AE /* GetLineDetailApiModel.h */,
+				6E6603751E0BEAC700F025AE /* GetLineDetailApiModel.m */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				6E5E6E3B1E00FBBE00AC8573 /* ViewController.m in Sources */,
 				6E5E6E881E014B0200AC8573 /* JsonDataCache.m in Sources */,
 				6E93BD321E078A39004F38BA /* LineInfoViewModel.m in Sources */,
+				6E6603761E0BEAC700F025AE /* GetLineDetailApiModel.m in Sources */,
 				6E93BD361E07F129004F38BA /* StationListCell.m in Sources */,
 				6E5E6E381E00FBBE00AC8573 /* AppDelegate.m in Sources */,
 				6ECFE07B1E062D430059106B /* LineInfoHeaderView.m in Sources */,

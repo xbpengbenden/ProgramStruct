@@ -7,7 +7,6 @@
 //
 
 #import "GetSignSecretApiModel.h"
-#import <YYModel/YYModel.h>
 
 #define API @"get_sign_secret"
 #define PREFIX @"auth"
@@ -29,34 +28,6 @@
     NSMutableDictionary* params =[[NSMutableDictionary alloc] init];
     [params setValue:seq forKey:@"seq"];
     
-    [self getJsonWithUrl:WEBURL method:HTTPMETHOD_GET parameters:params loadFromCache:NO saveToCache:NO progressHandle:nil completionHandle:^(id data, NSError* error){
-        if (!error) {//成功获取数据
-            
-            //解析Json数据
-            GetSignSecretApiModel *signSecretApiModel = [GetSignSecretApiModel yy_modelWithJSON:data];
-            signSecretApiModel.rawData = data;
-            signSecretApiModel.requestDate = [NSDate date];
-            NSError* apiResponseError = nil;
-            NSDictionary* userinfo = nil;
-            switch (signSecretApiModel.status) {
-                case API_RESPONSE_OK:
-                case API_RESPONSE_CREATED:
-                case API_RESPONSE_ACCEPTED:
-                    break;
-                default:
-                    userinfo = [NSDictionary dictionaryWithObject:[self errorDescriptionForStatus:signSecretApiModel.status] forKey:NSLocalizedDescriptionKey];
-                    apiResponseError = [NSError errorWithDomain:CustomErrorDomain code:signSecretApiModel.status userInfo:userinfo];
-                    break;
-            }
-            if (netSuccessHandle!=nil) {//if api response good, the apiResponseError is nil
-                netSuccessHandle(signSecretApiModel,apiResponseError);
-            }
-        }else{
-            if (netFailHandle!=nil) {
-                netFailHandle(error);
-            }
-        }
-    }];
-
+    [self GetDataByUrl:WEBURL method:HTTPMETHOD_GET Parameters:params loadFromCache:NO saveToCache:NO netsuccessHandle:netSuccessHandle netFailHandle:netFailHandle];
 }
 @end

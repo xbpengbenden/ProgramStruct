@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewModelClass.h"
+#import "LineInfoViewHeaderViewModel.h"
 
 @interface PointObj : BaseViewModelClass
 @property (nonatomic,assign) float longitude;
@@ -17,8 +18,8 @@
 @property (nonatomic,strong) NSString* stationName;
 @property (nonatomic,strong) NSString* etaTime;
 @property (nonatomic,strong) NSString* imgUrl;
-@property (nonatomic,assign) float longitude;
-@property (nonatomic,assign) float latitude;
+@property (nonatomic,assign) CGFloat longitude;
+@property (nonatomic,assign) CGFloat latitude;
 @property (nonatomic,strong) NSString* stationType;
 @property (nonatomic,assign) BOOL isSelected;
 @end
@@ -29,7 +30,6 @@
 @end
 
 
-@class LineInfoViewHeaderViewModel;
 @interface LineInfoViewModel : BaseViewModelClass
 @property (nonatomic,strong) LineInfoViewHeaderViewModel* headerViewModel;
 @property (nonatomic,assign) BOOL wrapStationList;
