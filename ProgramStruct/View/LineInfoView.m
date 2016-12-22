@@ -38,25 +38,20 @@
     // Drawing code
 }
 */
-#pragma mark - BaseViewProtocol 
--(instancetype)initViewWithViewModel:(BaseViewModelClass*)viewModel
+#pragma mark -getter viewModel cannot be nil
+-(LineInfoViewModel*)viewModel
 {
-    NSCParameterAssert([viewModel isKindOfClass:[LineInfoViewModel class]]);
-    if (self = [super init]) {
-        self.viewModel = (LineInfoViewModel*)viewModel;
-        [self configSubViews];
-        [self bindViewModel];
-        [self setupOutputSignal];
+    if (_viewModel==nil) {
+        _viewModel = [[LineInfoViewModel alloc]init];
     }
-    return self;
+    return _viewModel;
 }
-
-#pragma mark - pragram flow(工作流)
+#pragma mark - BaseViewProtocol
 -(void)configSubViews
 {
     self.backgroundColor = [UIColor yellowColor];
     // 线路描述信息
-    _lineInfoHeaderView = [[LineInfoHeaderView alloc] initViewWithViewModel:_viewModel.headerViewModel];
+    _lineInfoHeaderView = [[[LineInfoHeaderView alloc] init] setupWithViewModel:_viewModel.headerViewModel];
     [self addSubview:_lineInfoHeaderView];
     [_lineInfoHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(heightFor10 * 8.5);
@@ -124,6 +119,9 @@
 }
 -(void)bindViewModel
 {
+    if (_viewModel==nil) {
+        _viewModel = [[LineInfoViewModel alloc] init];
+    }
     //绑定wrapStationList是否展开或者收起站点列表动作
     [RACObserve(self, viewModel.wrapStationList) subscribeNext:^(NSNumber* x) {
         if ([x intValue]==0) {//No, unwrap the station list
@@ -152,7 +150,7 @@
     RAC(self.lineInfoHeaderView,viewModel) = RACObserve(self, viewModel.headerViewModel);
     
 }
--(void)setupOutputSignal
+-(void)configOutputSignal
 {
     self.dayTicketSignal = [[_dayTicketBtn rac_signalForControlEvents:UIControlEventTouchUpInside] map:^id(id value) {
         return value;
@@ -175,6 +173,7 @@
     NSInteger row = indexPath.row;
     StationObj* cellViewModel= self.viewModel.stationList[row];
     StationListCell* cell = [StationListCell cellWithTableView:_stationListTableView viewModel:cellViewModel];
+    cell.viewModel = cellViewModel;
     return cell;
 }
 

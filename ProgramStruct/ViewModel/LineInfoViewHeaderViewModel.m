@@ -16,7 +16,7 @@
     model.lineType = COMMUTE;
     model.lineName = @"H10";
     model.startStationName = @"中科院研究院";
-    model.endStationName = @"投资大厦1";
+    model.endStationName = @"投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦11投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1投资大厦1";
     model.busType = QUALITY;
     model.price = @"3";
     model.fullTripTimecost = @"50";

@@ -11,6 +11,6 @@
 @class LineInfoViewHeaderViewModel;
 @interface LineInfoHeaderView : UIView<BaseViewProtocol>
 
-@property (nonatomic,strong) LineInfoViewHeaderViewModel* viewModel;
+@property (nonatomic,strong,nonnull) LineInfoViewHeaderViewModel* viewModel;
 
 @end

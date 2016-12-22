@@ -9,7 +9,6 @@
 #import "LineInfoHeaderView.h"
 #import "LineInfoViewHeaderViewModel.h"
 
-
 typedef enum : NSInteger {
     LineTypeUnknow = -1,
     LineTypeSchool = 0,
@@ -49,19 +48,16 @@ typedef enum : NSInteger {
     // Drawing code
 }
 */
-#pragma mark - BaseViewProtocol
--(instancetype)initViewWithViewModel:(BaseViewModelClass*)viewModel;
+#pragma mark - getter - viewModel cannot be nil
+-(LineInfoViewHeaderViewModel*)viewModel
 {
-    NSCParameterAssert([viewModel isKindOfClass:[LineInfoViewHeaderViewModel class]]);
-    if (self = [super init]) {
-        self.viewModel = (LineInfoViewHeaderViewModel*)viewModel;
-        [self configSubViews];
-        [self bindViewModel];
+    if (_viewModel==nil) {
+        _viewModel = [[LineInfoViewHeaderViewModel alloc]init];
     }
-    return self;
+    return _viewModel;
 }
 
-#pragma mark - pragram flow(工作流)
+#pragma mark - BaseViewProtocol)
 -(void)configSubViews
 {
     self.backgroundColor = [UIColor whiteColor];
@@ -96,6 +92,7 @@ typedef enum : NSInteger {
     [_startStationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_lineNameLabel.mas_right).mas_equalTo(widhtFor10 * 0.5);
         make.top.mas_equalTo(heightFor10 * 1.3);
+        make.width.mas_lessThanOrEqualTo(widhtFor100);
     }];
     //小图片
     _throwImageView = [UIImageView new];
@@ -117,7 +114,9 @@ typedef enum : NSInteger {
         make.centerY.mas_equalTo(_startStationLabel.mas_centerY).mas_equalTo(0);
         make.left.mas_equalTo(_throwImageView.mas_right).mas_equalTo(widhtFor10 * 0.5);
         //        make.height.mas_equalTo(heightFor10*1.8);
-        make.right.mas_lessThanOrEqualTo(-widhtFor10);//距离右边父视图大于等于10像素
+        make.width.mas_lessThanOrEqualTo(widhtFor100*1.5);
+//        make.right.mas_lessThanOrEqualTo(-widhtFor10);//距离右边父视图大于等于10像素
+//        make.right.mas_greaterThanOrEqualTo(widhtFor10);
     }];
     
     
@@ -231,8 +230,8 @@ typedef enum : NSInteger {
 
 -(void)bindViewModel
 {
-    if (self.viewModel==nil) {
-        self.viewModel = [[LineInfoViewHeaderViewModel alloc]init];
+    if (_viewModel==nil) {
+        _viewModel = [[LineInfoViewHeaderViewModel alloc]init];
     }
     //绑定lineType动作
     @weakify(self);
@@ -359,7 +358,10 @@ typedef enum : NSInteger {
                                                             return [NSString stringWithFormat:@"%@ %@",mileage,timecost];
                                                         }];
 }
-
+//-(void)configOutputSignal
+//{
+//    
+//}
 #pragma mark - private
 -(LineTypeEnum)getLineTypeByString:(NSString*)lineTypeString
 {

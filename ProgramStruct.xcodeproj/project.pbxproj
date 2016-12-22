@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		29282A37DA021CF68C00F2BA /* Pods_ProgramStruct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54DE970CA674EB425B717F0 /* Pods_ProgramStruct.framework */; };
+		6E031C6F1E0B7A2500574001 /* BaseViewControllerClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E031C6E1E0B7A2500574001 /* BaseViewControllerClass.m */; };
+		6E031C731E0B955A00574001 /* UIView+BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E031C721E0B955A00574001 /* UIView+BaseView.m */; };
+		6E031C761E0BA88C00574001 /* UITableViewCell+BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E031C751E0BA88C00574001 /* UITableViewCell+BaseCell.m */; };
 		6E5E6E351E00FBBE00AC8573 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E341E00FBBE00AC8573 /* main.m */; };
 		6E5E6E381E00FBBE00AC8573 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E371E00FBBE00AC8573 /* AppDelegate.m */; };
 		6E5E6E3B1E00FBBE00AC8573 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E3A1E00FBBE00AC8573 /* ViewController.m */; };
-		6E5E6E3E1E00FBBE00AC8573 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E5E6E3C1E00FBBE00AC8573 /* Main.storyboard */; };
 		6E5E6E401E00FBBE00AC8573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E5E6E3F1E00FBBE00AC8573 /* Assets.xcassets */; };
 		6E5E6E431E00FBBE00AC8573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E5E6E411E00FBBE00AC8573 /* LaunchScreen.storyboard */; };
 		6E5E6E4E1E00FBBE00AC8573 /* ProgramStructTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E6E4D1E00FBBE00AC8573 /* ProgramStructTests.m */; };
@@ -49,15 +51,19 @@
 
 /* Begin PBXFileReference section */
 		3554D23D6F594438D103EB14 /* Pods-ProgramStruct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProgramStruct.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProgramStruct/Pods-ProgramStruct.debug.xcconfig"; sourceTree = "<group>"; };
-		6E031C651E0A8A3200574001 /* BaseViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseViewProtocol.h; path = View/BaseViewProtocol.h; sourceTree = "<group>"; };
-		6E031C661E0A8EF800574001 /* BaseCellViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseCellViewProtocol.h; path = View/BaseCellViewProtocol.h; sourceTree = "<group>"; };
+		6E031C6D1E0B7A2500574001 /* BaseViewControllerClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewControllerClass.h; path = Controller/BaseViewControllerClass.h; sourceTree = "<group>"; };
+		6E031C6E1E0B7A2500574001 /* BaseViewControllerClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewControllerClass.m; path = Controller/BaseViewControllerClass.m; sourceTree = "<group>"; };
+		6E031C701E0B7AB800574001 /* BaseViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseViewControllerProtocol.h; path = Controller/BaseViewControllerProtocol.h; sourceTree = "<group>"; };
+		6E031C711E0B955A00574001 /* UIView+BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+BaseView.h"; path = "View/UIView+BaseView.h"; sourceTree = "<group>"; };
+		6E031C721E0B955A00574001 /* UIView+BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+BaseView.m"; path = "View/UIView+BaseView.m"; sourceTree = "<group>"; };
+		6E031C741E0BA88C00574001 /* UITableViewCell+BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+BaseCell.h"; path = "View/UITableViewCell+BaseCell.h"; sourceTree = "<group>"; };
+		6E031C751E0BA88C00574001 /* UITableViewCell+BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+BaseCell.m"; path = "View/UITableViewCell+BaseCell.m"; sourceTree = "<group>"; };
 		6E5E6E301E00FBBE00AC8573 /* ProgramStruct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgramStruct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E5E6E341E00FBBE00AC8573 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E5E6E361E00FBBE00AC8573 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E5E6E371E00FBBE00AC8573 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6E5E6E391E00FBBE00AC8573 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
 		6E5E6E3A1E00FBBE00AC8573 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
-		6E5E6E3D1E00FBBE00AC8573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E5E6E3F1E00FBBE00AC8573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resource/Assets.xcassets; sourceTree = "<group>"; };
 		6E5E6E421E00FBBE00AC8573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E5E6E441E00FBBE00AC8573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,8 +136,35 @@
 		6E031C641E0A89F500574001 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				6E031C651E0A8A3200574001 /* BaseViewProtocol.h */,
-				6E031C661E0A8EF800574001 /* BaseCellViewProtocol.h */,
+				6E031C711E0B955A00574001 /* UIView+BaseView.h */,
+				6E031C721E0B955A00574001 /* UIView+BaseView.m */,
+				6E031C741E0BA88C00574001 /* UITableViewCell+BaseCell.h */,
+				6E031C751E0BA88C00574001 /* UITableViewCell+BaseCell.m */,
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
+		6E031C671E0AA58100574001 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6E031C681E0AA5A800574001 /* base */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		6E031C681E0AA5A800574001 /* base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
+		6E031C691E0B776C00574001 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				6E031C701E0B7AB800574001 /* BaseViewControllerProtocol.h */,
+				6E031C6D1E0B7A2500574001 /* BaseViewControllerClass.h */,
+				6E031C6E1E0B7A2500574001 /* BaseViewControllerClass.m */,
 			);
 			name = base;
 			sourceTree = "<group>";
@@ -161,6 +194,7 @@
 		6E5E6E321E00FBBE00AC8573 /* ProgramStruct */ = {
 			isa = PBXGroup;
 			children = (
+				6E031C671E0AA58100574001 /* Manager */,
 				6E5E6E721E011A0F00AC8573 /* ViewModel */,
 				6E5E6E711E0119FA00AC8573 /* View */,
 				6E5E6E701E0119DC00AC8573 /* Controller */,
@@ -176,7 +210,6 @@
 				6E5E6E661E01163D00AC8573 /* Model */,
 				6E5E6E361E00FBBE00AC8573 /* AppDelegate.h */,
 				6E5E6E371E00FBBE00AC8573 /* AppDelegate.m */,
-				6E5E6E3C1E00FBBE00AC8573 /* Main.storyboard */,
 				6E5E6E411E00FBBE00AC8573 /* LaunchScreen.storyboard */,
 				6E5E6E331E00FBBE00AC8573 /* Supporting Files */,
 			);
@@ -294,6 +327,7 @@
 		6E5E6E701E0119DC00AC8573 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6E031C691E0B776C00574001 /* base */,
 				6E5E6E391E00FBBE00AC8573 /* ViewController.h */,
 				6E5E6E3A1E00FBBE00AC8573 /* ViewController.m */,
 			);
@@ -499,7 +533,6 @@
 			files = (
 				6E5E6E431E00FBBE00AC8573 /* LaunchScreen.storyboard in Resources */,
 				6E5E6E401E00FBBE00AC8573 /* Assets.xcassets in Resources */,
-				6E5E6E3E1E00FBBE00AC8573 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,10 +611,13 @@
 				6E93BD361E07F129004F38BA /* StationListCell.m in Sources */,
 				6E5E6E381E00FBBE00AC8573 /* AppDelegate.m in Sources */,
 				6ECFE07B1E062D430059106B /* LineInfoHeaderView.m in Sources */,
+				6E031C6F1E0B7A2500574001 /* BaseViewControllerClass.m in Sources */,
 				6ECFE0781E062A6E0059106B /* LineInfoViewHeaderViewModel.m in Sources */,
 				6E5E6E781E01328C00AC8573 /* NSObject+Network.m in Sources */,
 				6E93BD2E1E067BC3004F38BA /* LineInfoView.m in Sources */,
+				6E031C761E0BA88C00574001 /* UITableViewCell+BaseCell.m in Sources */,
 				6E5E6E7B1E013C6A00AC8573 /* BaseModelClass.m in Sources */,
+				6E031C731E0B955A00574001 /* UIView+BaseView.m in Sources */,
 				6E5E6E7F1E013D4500AC8573 /* BaseApiModelClass.m in Sources */,
 				6E5E6E351E00FBBE00AC8573 /* main.m in Sources */,
 				6E5E6E8C1E01552900AC8573 /* JsonDataCacheConfig.m in Sources */,
@@ -622,14 +658,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6E5E6E3C1E00FBBE00AC8573 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E5E6E3D1E00FBBE00AC8573 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6E5E6E411E00FBBE00AC8573 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -9,37 +9,7 @@
 #import "StationListCell.h"
 #import "LineInfoViewModel.h"
 
-#define CELL_INDENTIFIER @"StationListCell"
 @implementation StationListCell
-
-+(instancetype)cellWithTableView:(UITableView*)tableView viewModel:(id)viewModel
-{
-    NSCParameterAssert(tableView!=nil);
-    NSCParameterAssert([viewModel isKindOfClass:[StationObj class]]);
-    
-    StationListCell* cell = [tableView dequeueReusableCellWithIdentifier:CELL_INDENTIFIER];
-    if (cell == nil) {
-        cell = [[ StationListCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CELL_INDENTIFIER];
-    }
-    cell.viewModel = viewModel;
-    return cell;
-}
-
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    if (self  = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self configSubViews];
-        [self bindViewModel];
-    }
-    return self;
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-    [self configSubViews];
-    [self bindViewModel];
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -47,6 +17,16 @@
     // Configure the view for the selected state
 }
 
+#pragma mark - getter - viewModel cannot be nil
+-(StationObj*)viewModel
+{
+    if (_viewModel==nil) {
+        _viewModel = [[StationObj alloc]init];
+    }
+    return _viewModel;
+}
+
+#pragma mark - BaseCellViewProtocol
 -(void)configSubViews
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -57,8 +37,8 @@
 }
 -(void)bindViewModel
 {
-    if (self.viewModel==nil) {
-        self.viewModel = [[StationObj alloc] init];
+    if (_viewModel==nil) {
+        _viewModel = [[StationObj alloc] init];
     }
     
     RACSignal* stationTypeSignal =  RACObserve(self, viewModel.stationType);
@@ -130,5 +110,9 @@
                 break;
         }
     }];
+}
+-(void)configOutputSignal
+{
+    
 }
 @end

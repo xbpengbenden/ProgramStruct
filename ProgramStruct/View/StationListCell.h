@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 @class StationObj;
 @interface StationListCell : UITableViewCell<BaseCellViewProtocol>
-@property (nonatomic,strong) StationObj* viewModel;
+@property (nonatomic,strong,nonnull) StationObj* viewModel;
 
 @end
