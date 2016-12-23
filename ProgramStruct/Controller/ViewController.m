@@ -64,6 +64,12 @@
     RAC(_lineInfoView.viewModel.headerViewModel,serviceEndTime) = RACObserve(self, lineDetailApiModel.data.serviceEndTime);
     
 }
+-(void)dealWithViewSignal
+{
+    [_lineInfoView.dayTicketSignal subscribeNext:^(id x) {
+        DLog(@"dayTicketBtn has been tapped.");
+    }];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

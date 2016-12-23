@@ -14,6 +14,7 @@
 //will be execute at BaseViewController viewDidLoad.
 -(void)setupMainView;
 -(void)bindModelToViewModel;
+-(void)dealWithViewSignal;
 @end
 
 @interface BaseViewControllerClass : UIViewController

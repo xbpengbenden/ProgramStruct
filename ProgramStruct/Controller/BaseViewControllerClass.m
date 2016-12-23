@@ -36,6 +36,9 @@
     if ([self respondsToSelector:@selector(bindModelToViewModel)]) {
         [self performSelector:@selector(bindModelToViewModel)];
     }
+    if ([self respondsToSelector:@selector(dealWithViewSignal)]) {
+        [self performSelector:@selector(dealWithViewSignal)];
+    }
     
 }
 
